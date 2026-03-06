@@ -1397,17 +1397,20 @@ footer {
 
 /* ===== CERTIFICATE LINKS ===== */
 .cert-link {
-    color: var(--acc-color);
-    margin-left: 8px;
-    font-size: 0.85rem;
+    text-decoration: none;
     transition: var(--transition);
     display: inline-block;
+    cursor: pointer;
 }
 
 .cert-link:hover {
-    transform: scale(1.2);
+    transform: translateY(-2px);
+}
+
+.cert-link:hover .highlight {
     text-shadow: 0 0 10px var(--acc-glow);
 }
+
 
 /* ===== MODAL / LIGHTBOX ===== */
 .modal {
