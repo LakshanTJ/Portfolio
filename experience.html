@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshan | Experience</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .detail-section {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            min-height: calc(100vh - 80px);
+            /* Adjust for footer */
+        }
+
+        .detail-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .detail-card:hover {
+            border-color: var(--acc-color);
+            box-shadow: 0 0 15px rgba(255, 106, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .detail-card h3 {
+            color: var(--acc-color);
+            margin-bottom: 10px;
+        }
+
+        .detail-card .date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-family: var(--font-heading);
+        }
+
+        .detail-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .detail-card ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .detail-card ul li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--acc-color);
+            font-family: var(--font-heading);
+        }
+
+        /* Image Styling */
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .image-gallery img {
+            height: 200px;
+            width: auto;
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            object-fit: cover;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .image-gallery img:hover {
+            border-color: var(--acc-color);
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 0 15px rgba(255, 106, 0, 0.5);
+            z-index: 10;
+        }
+
+        @media screen and (max-width: 768px) {
+            .image-gallery {
+                gap: 10px;
+            }
+
+            .image-gallery img {
+                height: 150px;
+                width: calc(50% - 5px);
+                flex-grow: 1;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .image-gallery img {
+                height: 120px;
+                width: calc(50% - 5px);
+            }
+        }
+
+        /* Modal / Lightbox Styling */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            /* Sit on top */
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(10, 10, 10, 0.95);
+            /* High opacity dark background */
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 900px;
+            max-height: 80vh;
+            /* Don't exceed screen height */
+            object-fit: contain;
+            border: 2px solid var(--acc-color);
+            box-shadow: 0 0 30px rgba(255, 106, 0, 0.4);
+            border-radius: 8px;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: var(--acc-color);
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #fff;
+            text-shadow: 0 0 10px var(--acc-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" style="background: rgba(10, 10, 10, 0.95); box-shadow: 0 2px 15px rgba(255, 106, 0, 0.1);">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LAK<span class="highlight">SHAN</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link active">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Detailed Experience Section -->
+    <section class="detail-section">
+        <div class="container">
+            <h2 class="section-title">PROFESSIONAL_<span class="highlight">EXPERIENCE</span></h2>
+
+            <div class="detail-card fade-in-up">
+                <h3>Volunteering</h3>
+                <div class="date"> - IIT IEEE RAS [ RobotNexus ]</div>
+                <div class="image-gallery">
+                    <img src="pic/R1.jpg" alt="Picture 1">
+                    <img src="pic/R2.jpg" alt="Picture 2">
+                    <img src="pic/R3.jpg" alt="Picture 3">
+                    <img src="pic/R4.jpg" alt="Picture 3">
+                    <img src="pic/R5.jpg" alt="Picture 4">
+                </div>
+                <div class="date"> - International Summit of Sustainable World 2025</div>
+                <div class="image-gallery">
+                    <img src="pic/ccc.jpg" alt="Picture 1">
+                </div>
+            </div>
+
+            <div class="detail-card fade-in-up delay-1">
+                <h3>Leadership Roles</h3>
+                <div class="date"> - Technical Lead [ IEEE RAS of IIT ]</div>
+                <div class="image-gallery">
+                    <img src="pic/tt1.jpg" alt="Picture 1">
+                    <img src="pic/tt2.jpg" alt="Picture 2">
+                    <img src="pic/tt3.jpg" alt="Picture 3">
+                    <img src="pic/tt4.jpg" alt="Picture 4">
+                    <img src="pic/tt5.jpg" alt="Picture 5">
+                    <img src="pic/tt6.jpg" alt="Picture 6">
+                    <img src="pic/tt7.jpg" alt="Picture 7">
+                    <img src="pic/tt8.jpg" alt="Picture 8">
+                    <img src="pic/tt9.jpg" alt="Picture 9">
+                    <img src="pic/tt10.jpg" alt="Picture 10">
+                    <img src="pic/tt11.jpg" alt="Picture 11">
+                </div>
+                <div class="date"> - Vice Chair in IEEE RAS [ Vertex'25 ]</div>
+                <div class="image-gallery">
+                    <img src="pic/V1..jpg" alt="Vice Chair Pic 3">
+                    <img src="pic/V2.jpg" alt="Vice Chair Pic 3.1">
+                    <img src="pic/V3.jpg" alt="Vice Chair Pic 3.2">
+                    <img src="pic/V4.jpg" alt="Vice Chair Pic 3.3">
+                </div>
+                <div class="date"> - Vice Chair in IEEE RAS [ Micro Maze 2.0 ]</div>
+                <div class="image-gallery">
+                    <img src="pic/M1.jpg" alt="Vice Chair Pic 2">
+                    <img src="pic/M2.jpg" alt="Vice Chair Pic 2.1">
+                    <img src="pic/M3.jpg" alt="Vice Chair Pic 2.2">
+                    <img src="pic/M4.jpg" alt="Vice Chair Pic 2.3">
+                    <img src="pic/M5.jpg" alt="Vice Chair Pic 2.4">
+                    <img src="pic/M6.jpg" alt="Vice Chair Pic 2.5">
+                    <img src="pic/M7.jpg" alt="Vice Chair Pic 2.6">
+                </div>
+                <div class="date"> - Vice Chair in IEEE RAS [ Traction ]</div>
+                <div class="image-gallery">
+                    <img src="pic/R1.jpg" alt="Picture 1">
+                    <img src="pic/R2.jpg" alt="Picture 2">
+                    <img src="pic/R3.jpg" alt="Picture 3">
+                    <img src="pic/R4.jpg" alt="Picture 3">
+                    <img src="pic/R5.jpg" alt="Picture 4">
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html#about" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Return to
+                    System</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Lakshan. Initiated System. <span class="highlight">All Rights Reserved.</span></p>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <!-- Mobile nav & Modal script -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Get the modal
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("img01");
+        const closeBtn = document.getElementsByClassName("close-modal")[0];
+
+        // Get all images inside detail cards
+        const images = document.querySelectorAll('.detail-card img');
+
+        // Loop through all images and attach click event
+        images.forEach(img => {
+            img.style.cursor = 'pointer'; // add pointer cursor
+            img.addEventListener('click', function () {
+                modal.style.display = "flex";
+                modal.style.alignItems = "center";
+                modal.style.justifyContent = "center";
+                modalImg.src = this.src;
+            });
+        });
+
+        // Close when clicking the "X"
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Close when clicking outside the image
+        modal.onclick = function (e) {
+            if (e.target !== modalImg) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

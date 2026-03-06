@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshan | Competitions</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .detail-section {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            min-height: calc(100vh - 80px);
+            /* Adjust for footer */
+        }
+
+        .detail-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .detail-card:hover {
+            border-color: var(--acc-color);
+            box-shadow: 0 0 15px rgba(255, 106, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .detail-card h3 {
+            color: var(--acc-color);
+            margin-bottom: 10px;
+        }
+
+        .detail-card .date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-family: var(--font-heading);
+        }
+
+        .detail-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .detail-card ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .detail-card ul li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--acc-color);
+            font-family: var(--font-heading);
+        }
+
+        /* Image Styling */
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .image-gallery img {
+            height: 200px;
+            width: auto;
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            object-fit: cover;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .image-gallery img:hover {
+            border-color: var(--acc-color);
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 0 15px rgba(255, 106, 0, 0.5);
+            z-index: 10;
+        }
+
+        @media screen and (max-width: 768px) {
+            .image-gallery {
+                gap: 10px;
+            }
+
+            .image-gallery img {
+                height: 150px;
+                width: calc(50% - 5px);
+                flex-grow: 1;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .image-gallery img {
+                height: 120px;
+                width: calc(50% - 5px);
+            }
+        }
+
+        /* Modal / Lightbox Styling */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            /* Sit on top */
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(10, 10, 10, 0.95);
+            /* High opacity dark background */
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 900px;
+            max-height: 80vh;
+            /* Don't exceed screen height */
+            object-fit: contain;
+            border: 2px solid var(--acc-color);
+            box-shadow: 0 0 30px rgba(255, 106, 0, 0.4);
+            border-radius: 8px;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: var(--acc-color);
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #fff;
+            text-shadow: 0 0 10px var(--acc-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" style="background: rgba(10, 10, 10, 0.95); box-shadow: 0 2px 15px rgba(255, 106, 0, 0.1);">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LAK<span class="highlight">SHAN</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#achievements" class="nav-link active">Achievements</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Detailed Competitions Section -->
+    <section class="detail-section">
+        <div class="container">
+            <h2 class="section-title">PARTICIPATED_<span class="highlight">COMPETITIONS</span></h2>
+
+            <div class="detail-card fade-in-up">
+                <h3>Hult Prize</h3>
+                <div class="date"> February 2026</div>
+                <div class="image-gallery">
+                    <img src="pic/hult.jpeg" alt="hultPic 1">
+                    <img src="pic/hult1.jpeg" alt="hultPic 1.1">
+                    <img src="pic/hult3.jpg" alt="hultPic 1.2">
+                </div>
+            </div>
+
+            <div class="detail-card fade-in-up">
+                <h3>ModelX 2025</h3>
+                <div class="date"> December 2025</div>
+                <div class="image-gallery">
+                    <img src="pic/x.jpg" alt="mxPic 1">
+                    <img src="pic/x1.jpg" alt="mxPic 1.1">
+                    <img src="pic/x2.jpg" alt="mxPic 1.2">
+                    <img src="pic/x3.jpg" alt="mxPic 1.3">
+                </div>
+            </div>
+
+            <div class="detail-card fade-in-up">
+                <h3>UoK Robot Battle Competition</h3>
+                <div class="date"> September 2025</div>
+                <div class="image-gallery">
+                    <img src="pic/uok.jpg" alt="uok 1">
+                    <img src="pic/uok1.jpg" alt="uok 1.1">
+                    <img src="pic/uok2.jpg" alt="uok 1.2">
+                    <img src="pic/uok3.jpg" alt="uok 1.3">
+                    <img src="pic/uok4.jpg" alt="uok 1.4">
+                    <img src="pic/uok5.jpg" alt="uok 1.5">
+                    <img src="pic/uok6.jpg" alt="uok 1.6">
+                </div>
+            </div>
+
+            <div class="detail-card fade-in-up">
+                <h3>J'Pura ElectroCombat Robot Battle Competition</h3>
+                <div class="date"> August 2024</div>
+                <div class="image-gallery">
+                    <img src="pic/jp.jpg" alt="jp 1">
+                    <img src="pic/jp1.jpg" alt="jp 1.1">
+                    <img src="pic/jp2.jpg" alt="jp 1.2">
+                    <img src="pic/jp3.jpg" alt="jp 1.3">
+                </div>
+            </div>
+
+            <div class="detail-card fade-in-up">
+                <h3>MicroMaze Competition</h3>
+                <div class="date"> August 2024 </div>
+                <div class="image-gallery">
+                    <img src="pic/mm1.jpg" alt="mmPic 1">
+                    <img src="pic/mm2.jpg" alt="mmPic 1.1">
+                    <img src="pic/mm3.jpg" alt="mmPic 1.2">
+                    <img src="pic/mm4.jpg" alt="mmPic 1.3">
+                </div>
+            </div>
+
+            <div class="detail-card fade-in-up">
+                <h3>UWU Battle Bot 2.0: Death Race Competition</h3>
+                <div class="date"> January 2024</div>
+                <div class="image-gallery">
+                    <img src="pic/uwu.jpg" alt="uwu 1">
+                    <img src="pic/uwu1.jpg" alt="uwu 1.1">
+                    <img src="pic/uwu2.jpg" alt="uwu 1.2">
+                    <img src="pic/uwu3.jpg" alt="uwu 1.3">
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html#achievements" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Return to
+                    System</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Lakshan. Initiated System. <span class="highlight">All Rights Reserved.</span></p>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <!-- Mobile nav & Modal script -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Get the modal
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("img01");
+        const closeBtn = document.getElementsByClassName("close-modal")[0];
+
+        // Get all images inside detail cards
+        const images = document.querySelectorAll('.detail-card img');
+
+        // Loop through all images and attach click event
+        images.forEach(img => {
+            img.style.cursor = 'pointer'; // add pointer cursor
+            img.addEventListener('click', function () {
+                modal.style.display = "flex";
+                modal.style.alignItems = "center";
+                modal.style.justifyContent = "center";
+                modalImg.src = this.src;
+            });
+        });
+
+        // Close when clicking the "X"
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Close when clicking outside the image
+        modal.onclick = function (e) {
+            if (e.target !== modalImg) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

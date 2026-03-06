@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshan | Portfolio</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Animation (CSS Grid lines have been moved to CSS or layered via video) -->
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">LAK<span class="highlight">SHAN</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero section">
+        <!-- Background Video -->
+        <video autoplay loop muted playsinline class="hero-bg-video">
+            <source src="futuristic_bg.webm" type="video/webm">
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h3 class="fade-in-up">INITIALIZING...</h3>
+                <h1 class="fade-in-up delay-1">Hi, I'm <span class="highlight glow">Lakshan</span></h1>
+                <h2 class="fade-in-up delay-2">Computer Science Undergraduate <br>From Sri Lanka</h2>
+                <p class="fade-in-up delay-3">Exploring about Robotics, Embedded Systems, and Innovation</p>
+                <div class="cta-buttons fade-in-up delay-4">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    <a href="Lakshan's CV.pdf" target="_blank" download class="btn btn-primary">Download CV</a>
+                </div>
+            </div>
+            <div class="hero-profile-pic">
+                <!-- Replace the src below with the path to your image (e.g., 'images/my_photo.jpg') -->
+                <img src="pic\2.jpg" class="fade-in-up delay-2" alt="Lakshan" id="home-profile-img">
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">ABOUT_<span class="highlight">ME</span></h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <!-- Placeholder for User's image -->
+                    <div class="image-frame">
+                        <img src="pic\1.jpg" alt="Lakshan Profile">
+                        <div class="frame-corner top-left"></div>
+                        <div class="frame-corner top-right"></div>
+                        <div class="frame-corner bottom-left"></div>
+                        <div class="frame-corner bottom-right"></div>
+                    </div>
+                </div>
+                <div class="about-info">
+                    <p class="bio">I am an undergraduate Computer Science student at the Information Institute of
+                        Technology,
+                        driven by a passion for innovation and real-world problem-solving through technology.
+                        My journey in tech started with Python, and I am currently expanding my expertise in Java,
+                        HTML,C,C++
+                        and software development to build smarter, more efficient solutions.
+                        <br><br>
+                        I have also participated in robotics competitions, gaining hands-on experience and knowledge in
+                        robotics and automation.
+                        <br><br>
+                        I am eager to connect with professionals in Hardwere and software engineering and innovation,
+                        collaborate on
+                        exciting projects, and explore opportunities in tech-driven problem-solving.
+                    </p>
+
+                    <div class="about-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="education">Education</button>
+                            <button class="tab-btn" data-tab="experience">Experience</button>
+                            <button class="tab-btn" data-tab="events">Events</button>
+                        </div>
+                        <div class="tab-content">
+                            <div id="education" class="tab-pane active">
+                                <ul>
+                                    <li><span class="highlight">BSc (Hons) Computer Science</span><br> - University of
+                                        Westminster UK @ IIT
+                                        (2024
+                                        - Present)</li>
+
+                                    <li><span class="highlight">Personal & Professional Communication -
+                                            DipLcm</span><br> -
+                                        Awarded by University of West London (LCME)
+                                        Completed at Mystical Rose International Institute
+                                        (2024)</li>
+
+                                    <li><span class="highlight">Advanced Spoken English</span><br> - Mystical Rose
+                                        International Institute
+                                        (2024)</li>
+
+                                    <li><span class="highlight">Spoken English</span><br> - Mystical Rose International
+                                        Institute
+                                        (2023)</li>
+
+                                    <li><span class="highlight">Foundation Certificate in Higher Education in AI & Data
+                                            Science</span><br> - Robert Garden University @ IIT
+                                        (2023-2024)</li>
+
+                                    <li><span class="highlight">Higher Education [Finished G.C.E O/L]</span><br> -
+                                        Highlands
+                                        National Collage
+                                        Hatton (2017-2023)</li>
+                                </ul>
+                            </div>
+                            <div id="experience" class="tab-pane">
+                                <ul>
+                                    <li><span class="highlight">Volunteering</span> <br>- IIT IEEE RAS [RobotNexus]
+                                        <br>- International Summit of Sustainable World 2025 [Awarded the South Asia
+                                        Social Achievers Award of Recognition.]
+                                    </li>
+                                    <li><span class="highlight">Leadership Roles</span> <br>- Technical Lead [IEEE RAS
+                                        of IIT] <br>- Vice Chair in IEEE RAS [Vertex'25] <br>- Vice Chair in IEEE RAS
+                                        [Micro Maze 2.0] <br>- Vice Chair in IEEE RAS [Traction]</li>
+                                </ul>
+                                <a href="experience.html" class="btn btn-primary"
+                                    style="margin-top: 15px; padding: 8px 15px; font-size: 0.8rem;">View Detailed
+                                    Experience</a>
+                            </div>
+                            <div id="events" class="tab-pane">
+                                <div class="events-split">
+                                    <ul class="events-left">
+                                        <li><span class="highlight">Industrial Visits [Tech Trek]:</span> <br>- Zone
+                                            24/7<br> - Econsulate<br> - Ncinga<br> - Nagarro<br> - Cloud Solutions
+                                            International<br>
+                                            - Epic<br> - Infor<br> - Code
+                                            Gen<br> - Atlas Labs<br> - Creative Software</li>
+                                    </ul>
+                                    <ul class="events-right">
+                                        <li><span class="highlight">Entrepreneurship Events:</span> <br>- Global
+                                            Entrepreneurship Forum 2025</li>
+                                        <li><span class="highlight">Google Events:</span> <br>- Google IO Extended<br>-
+                                            DevFest
+                                            Sri Lanka 2025</li>
+                                    </ul>
+                                </div>
+                                <a href="events.html" class="btn btn-primary"
+                                    style="margin-top: 15px; padding: 8px 15px; font-size: 0.8rem;">View Detailed
+                                    Events</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">CORE_<span class="highlight">CAPABILITIES</span></h2>
+            <div class="skills-grid">
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card"><i class="fab fa-python"></i> Python</div>
+                        <div class="skill-card"><i class="fab fa-java"></i> Java</div>
+                        <div class="skill-card"><i class="fas fa-code"></i> C / C++</div>
+                        <div class="skill-card"><i class="fab fa-html5"></i> HTML/CSS</div>
+                        <div class="skill-card"><i class="fab fa-js"></i> JavaScript</div>
+                    </div>
+                </div>
+                <!-- Hardware & Embedded Systems -->
+                <div class="skill-category">
+                    <h3>Hardware & Embedded Systems</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card"><i class="fas fa-microchip"></i> Arduino</div>
+                        <div class="skill-card"><i class="fas fa-wifi"></i> ESP32</div>
+                        <div class="skill-card"><i class="fas fa-memory"></i> STM32</div>
+                    </div>
+                </div>
+                <!-- Engineering & Design Tools -->
+                <div class="skill-category">
+                    <h3>Engineering & Design Tools</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card"><i class="fas fa-drafting-compass"></i> KiCad</div>
+                        <div class="skill-card"><i class="fas fa-cogs"></i> Tinkercad</div>
+                        <div class="skill-card"><i class="fas fa-cube"></i> Fusion 360</div>
+                    </div>
+                </div>
+                <!-- Soft Skills -->
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card"><i class="fas fa-flag"></i> Leadership</div>
+                        <div class="skill-card"><i class="fas fa-users"></i> Teamwork</div>
+                        <div class="skill-card"><i class="fas fa-clock"></i> Time Management</div>
+                        <div class="skill-card"><i class="fas fa-brain"></i> Critical Thinking</div>
+                        <div class="skill-card"><i class="fas fa-tasks"></i> Project Management</div>
+                        <div class="skill-card"><i class="fas fa-comments"></i> Effective Communication</div>
+                        <div class="skill-card"><i class="fas fa-lightbulb"></i> Innovation & Creativity</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">LATEST_<span class="highlight">PROJECTS</span></h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="pic/alert.jpeg" alt="AlertRix">
+                        <div class="project-overlay">
+                            <a href="https://alertrix.lk/" class="github-link"><i
+                                    class="fa-brands fa-squarespace"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>AlertRix [ Second year group project ]</h3>
+                        <div class="tech-stack">
+                            <span>ESP32</span>
+                            <span>STM32</span>
+                            <span>ESP32 CAM</span>
+                        </div>
+                        <p>AlertRix is a smart automated pill-dispensing system designed to help people manage their
+                            medication safely and on time. It combines embedded hardware with a mobile app to monitor
+                            schedules and dispense the correct pills automatically. The system focuses on improving
+                            medication adherence through smart alerts and remote monitoring.</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="pic/IOT.png" alt="Iot-sewerage-gas-detector">
+                        <div class="project-overlay">
+                            <a href="https://github.com/LakshanTJ/Iot-sewerage-gas-detector" class="github-link"><i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Iot Sewerage Gas Detector</h3>
+                        <div class="tech-stack">
+                            <span>ESP32</span>
+                            <span>SGP30</span>
+                            <span>MQ-4</span>
+                            <span>MiCS-6814</span>
+                            <span>ZE08-CH₂O</span>
+                            <span>MQ-136</span>
+                            <span>MH-Z19B</span>
+                            <span>DHT22</span>
+                            <span>Blynk App</span>
+                        </div>
+                        <p>IoT Sewerage Multi-Gas Detection System – An ESP32-based monitoring system designed to detect
+                            hazardous gases such as CO₂, H₂S, CO, NH₃, NO₂, CH₄, formaldehyde, and VOCs along with
+                            temperature and humidity.
+                            The system streams real-time environmental data to a cloud dashboard and triggers alerts
+                            when unsafe conditions are detected.
+                            Built to improve safety in sewage environments and other high-risk areas by enabling early
+                            detection of dangerous gas exposure.</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="pic/work-1.jpg" alt="Traffic Data Management">
+                        <div class="project-overlay">
+                            <a href="https://github.com/LakshanTJ/Traffic-Data-Management-" class="github-link"><i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Traffic Data Management</h3>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                        </div>
+                        <p>A Python-based traffic management system with a graphical interface that visualizes traffic
+                            patterns using real-time data analysis.</p>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="pic/work-2.gif" alt="Percolation Simulation System">
+                        <div class="project-overlay">
+                            <a href="https://github.com/LakshanTJ/-Percolation-Simulation-System" class="github-link"><i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Percolation Simulation</h3>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                        </div>
+                        <p>Developed a Python-based percolation simulation that models liquid flow through dynamic grids
+                            using custom pathfinding algorithms.</p>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="pic/work-3.webp" alt="Life Below Water Web Project">
+                        <div class="project-overlay">
+                            <a href="https://github.com/LakshanTJ/-Life-Below-Water-Web-Development-Group-Project"
+                                class="github-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Life Below Water</h3>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <p>Collaborative web project focusing on ocean conservation and marine biodiversity as part of
+                            the UN Sustainability Goals.</p>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="pic/work-4.jpg" alt="Project Management System for XYZ Company">
+                        <div class="project-overlay">
+                            <a href="https://github.com/LakshanTJ/-Project-Management-System-for-XYZ-Company"
+                                class="github-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Management System</h3>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                        </div>
+                        <p>A specialized system for tracking construction projects, workforce allocation, and real-time
+                            project statistics for corporate use.</p>
+                    </div>
+                </div>
+                <!-- Project 7 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="pic/todo.jpg" alt="Flutter_Todo_List_App">
+                        <div class="project-overlay">
+                            <a href="https://github.com/LakshanTJ/Flutter_Todo_List_App" class="github-link"><i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Flutter_Todo_List_App</h3>
+                        <div class="tech-stack">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                        </div>
+                        <p>A simple Flutter Todo List app allowing users to add and delete tasks dynamically. Features a
+                            clean UI with a text input, add button, and a scrollable list of tasks. Demonstrates state
+                            management using StatefulWidget and setState for real-time updates. Perfect for beginners
+                            learning Flutter basics.</p>
+                    </div>
+                </div>
+                <!-- Project 8 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="pic/menu.jpg" alt="Flutter_Restuarant_Manu">
+                        <div class="project-overlay">
+                            <a href="https://github.com/LakshanTJ/Flutter_Restuarant_Manu" class="github-link"><i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Flutter_Restuarant_Manu</h3>
+                        <div class="tech-stack">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                        </div>
+                        <p>A simple Flutter app showcasing a restaurant menu with various noodle and rice dishes. Each
+                            item is displayed in a styled container with name, description, and price. Uses ListView for
+                            scrolling and BoxDecoration for UI styling, making it a clean and visually appealing menu
+                            interface.</p>
+                    </div>
+                </div>
+                <!-- Project 9 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="pic/cal.jpg" alt="Flutter_Calculator">
+                        <div class="project-overlay">
+                            <a href="https://github.com/LakshanTJ/Flutter_Calculator" class="github-link"><i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Flutter_Calculator</h3>
+                        <div class="tech-stack">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                        </div>
+                        <p>Here’s a version under 350 characters: A Flutter-based calculator app with a black-themed UI,
+                            circular buttons, and support for basic operations (+, –, ×, ÷). It shows real-time input,
+                            handles interactions with InkWell and setState(), supports decimals, and includes a clear
+                            button. Responsive design ensures consistent layout.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title">ACHIEVE<span class="highlight">MENTS</span></h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <i class="fas fa-trophy highlight icon-large"></i>
+                    <h3>participated competition</h3>
+                    <a href="competitions.html" class="btn btn-primary"
+                        style="margin-top: 15px; padding: 8px 15px; font-size: 0.8rem;">View Details</a>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-certificate highlight icon-large"></i>
+                    <h3>Certificates</h3>
+                    <a href="certificates.html" class="btn btn-primary"
+                        style="margin-top: 15px; padding: 8px 15px; font-size: 0.8rem;">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">ESTABLISH_<span class="highlight">CONNECTION</span></h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Communicate with <span class="highlight">Me</span></h3>
+                    <p>Available for Internship, freelance work, or discussing new tech innovations.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>thiyagulakshan6@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-square-phone"></i>
+                            <span>0713039494</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Colombo, Sri Lanka</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/LakshanTJ" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/lakshan-thiyagarajah6" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/t_lakshan_t/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/94713039494" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder=" ">
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Transmission <i
+                            class="fas fa-paper-plane glow"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Lakshan. Initiated System. <span class="highlight">All Rights Reserved.</span></p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
